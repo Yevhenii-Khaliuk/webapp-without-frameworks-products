@@ -7,7 +7,6 @@ import com.khaliuk.ViewModel;
 import com.khaliuk.service.CategoryService;
 
 public class GetCategoryByIdController implements Controller {
-
     private final CategoryService categoryService;
 
     public GetCategoryByIdController(CategoryService categoryService) {

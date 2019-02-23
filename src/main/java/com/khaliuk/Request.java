@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Request {
-
     private final String method;
     private final String uri;
     private final Map<String, String[]> params;

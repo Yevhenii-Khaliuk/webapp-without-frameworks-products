@@ -2,14 +2,16 @@ package com.khaliuk;
 
 import com.khaliuk.controller.GetAllCategoriesController;
 import com.khaliuk.controller.GetCategoryByIdController;
+import com.khaliuk.controller.GetProductByIdController;
 import com.khaliuk.controller.LoginUserController;
 import com.khaliuk.service.CategoryService;
 import com.khaliuk.service.CategoryServiceImpl;
+import com.khaliuk.service.ProductService;
+import com.khaliuk.service.ProductServiceImpl;
 import com.khaliuk.service.UserService;
 import com.khaliuk.service.UserServiceImpl;
 
 public class Factory {
-
     public static LoginUserController getLoginUserController(UserService userService) {
         return new LoginUserController(userService);
     }
@@ -28,5 +30,13 @@ public class Factory {
 
     public static GetCategoryByIdController getGetCategoryByIdController(CategoryService categoryService) {
         return new GetCategoryByIdController(categoryService);
+    }
+
+    public static ProductService getProductService() {
+        return new ProductServiceImpl();
+    }
+
+    public static GetProductByIdController getGetProductByIdController(ProductService productService) {
+        return new GetProductByIdController(productService);
     }
 }

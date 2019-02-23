@@ -3,7 +3,9 @@ package com.khaliuk;
 import static com.khaliuk.Factory.getCategoryService;
 import static com.khaliuk.Factory.getGetAllCategoriesController;
 import static com.khaliuk.Factory.getGetCategoryByIdController;
+import static com.khaliuk.Factory.getGetProductByIdController;
 import static com.khaliuk.Factory.getLoginUserController;
+import static com.khaliuk.Factory.getProductService;
 import static com.khaliuk.Factory.getUserServiceImpl;
 
 import com.khaliuk.controller.Controller;
@@ -26,6 +28,9 @@ public class MainServlet extends HttpServlet {
                 getGetAllCategoriesController(getCategoryService()));
         controllerMap.put(Request.of("GET", "/servlet/category"),
                 getGetCategoryByIdController(getCategoryService()));
+        controllerMap.put(Request.of("GET", "/servlet/product"),
+                getGetProductByIdController(getProductService()));
+
     }
 
     @Override
@@ -48,7 +53,6 @@ public class MainServlet extends HttpServlet {
 
     private void processViewModel(ViewModel vm, HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
         vm.getAttributes().forEach(req::setAttribute);
         req.getRequestDispatcher(vm.gerRedirectUri()).forward(req, resp);
     }
