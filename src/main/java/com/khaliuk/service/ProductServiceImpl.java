@@ -1,12 +1,11 @@
 package com.khaliuk.service;
 
 import com.khaliuk.model.Product;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class ProductServiceImpl implements ProductService {
-    private static List<Product> products = new ArrayList<>();
+    private static List<Product> products;
 
     static {
         products = CategoryServiceImpl.getAllProducts();
