@@ -22,6 +22,14 @@ public class Request {
         this.params = new HashMap<>();
     }
 
+    public static Request of(String method, String uri, Map<String, String[]> params) {
+        return new Request(method, uri, params);
+    }
+
+    public static Request of(String method, String uri) {
+        return new Request(method, uri);
+    }
+
     public String getMethod() {
         return method;
     }
@@ -42,14 +50,6 @@ public class Request {
     @Override
     public int hashCode() {
         return Objects.hash(method, uri);
-    }
-
-    public static Request of(String method, String uri, Map<String, String[]> params) {
-        return  new Request(method, uri, params);
-    }
-
-    public static Request of(String method, String uri) {
-        return  new Request(method, uri);
     }
 
     public String[] getParam(String name) {

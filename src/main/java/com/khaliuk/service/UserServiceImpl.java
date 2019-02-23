@@ -1,7 +1,6 @@
 package com.khaliuk.service;
 
 import com.khaliuk.model.User;
-
 import java.util.Optional;
 
 public class UserServiceImpl implements UserService {

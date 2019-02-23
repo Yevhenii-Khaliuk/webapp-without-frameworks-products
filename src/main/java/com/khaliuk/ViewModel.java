@@ -13,6 +13,10 @@ public class ViewModel {
         this.view = view;
     }
 
+    public static ViewModel of(String view) {
+        return new ViewModel(view);
+    }
+
     public String getView() {
         return view;
     }
@@ -24,10 +28,6 @@ public class ViewModel {
     public ViewModel withAttribute(String name, Object o) {
         this.attributes.put(name, o);
         return this;
-    }
-
-    public static ViewModel of(String view) {
-        return new ViewModel(view);
     }
 
     public String gerRedirectUri() {

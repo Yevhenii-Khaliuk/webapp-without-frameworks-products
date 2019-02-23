@@ -2,7 +2,6 @@ package com.khaliuk.service;
 
 import com.khaliuk.model.Category;
 import com.khaliuk.model.Product;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

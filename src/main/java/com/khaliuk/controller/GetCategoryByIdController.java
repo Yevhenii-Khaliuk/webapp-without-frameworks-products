@@ -1,10 +1,10 @@
 package com.khaliuk.controller;
 
+import static java.util.Collections.emptyList;
+
 import com.khaliuk.Request;
 import com.khaliuk.ViewModel;
 import com.khaliuk.service.CategoryService;
-
-import static java.util.Collections.emptyList;
 
 public class GetCategoryByIdController implements Controller {
 
@@ -19,7 +19,7 @@ public class GetCategoryByIdController implements Controller {
         String param = req.getParam("c_id")[0];
         Long id = Long.parseLong(param);
         return categoryService.getById(id)
-                .map(c ->ViewModel.of("category").withAttribute("category", c))
+                .map(c -> ViewModel.of("category").withAttribute("category", c))
                 .orElseGet(() -> ViewModel.of("category").withAttribute("category", emptyList()));
 
     }
