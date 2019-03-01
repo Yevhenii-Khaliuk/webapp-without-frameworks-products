@@ -20,6 +20,10 @@ public class User {
         this.password = password;
     }
 
+    public static User of(String username, String password) {
+        return new User(username, password);
+    }
+
     public String getUsername() {
         return username;
     }
@@ -58,9 +62,5 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public static User of(String username, String password) {
-        return  new User(username, password);
     }
 }

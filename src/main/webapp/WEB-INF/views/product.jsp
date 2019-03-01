@@ -2,21 +2,18 @@
 <%--
   Created by IntelliJ IDEA.
   User: kerana
-  Date: 21.02.19
-  Time: 20:44
+  Date: 23.02.19
+  Time: 13:32
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Categories</title>
+    <title>Product</title>
 </head>
 <body>
-    <h1>Categories</h1>
-
-    <c:forEach items="${categories}" var="c">
-        <h3>Category name: <a href="<c:url
-            value="/servlet/category?c_id=${c.id}"/>"><c:out value="${c.categoryName}"/></a></h3>
-    </c:forEach>
+    <h3>Product name: <c:out value="${product.productName}"/></h3>
+    <h3>Description: <c:out value="${product.description}"/></h3>
+    <h3>Price: <c:out value="${product.price}"/></h3>
 </body>
 </html>

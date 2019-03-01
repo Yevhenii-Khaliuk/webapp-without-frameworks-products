@@ -5,7 +5,6 @@ import com.khaliuk.ViewModel;
 import com.khaliuk.service.CategoryService;
 
 public class GetAllCategoriesController implements Controller {
-
     private final CategoryService categoryService;
 
     public GetAllCategoriesController(CategoryService categoryService) {
