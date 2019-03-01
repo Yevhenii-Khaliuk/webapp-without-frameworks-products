@@ -20,6 +20,5 @@ public class GetCategoryByIdController implements Controller {
         return categoryService.getById(id)
                 .map(c -> ViewModel.of("category").withAttribute("category", c))
                 .orElseGet(() -> ViewModel.of("category").withAttribute("category", emptyList()));
-
     }
 }

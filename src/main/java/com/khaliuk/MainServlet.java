@@ -30,7 +30,6 @@ public class MainServlet extends HttpServlet {
                 getGetCategoryByIdController(getCategoryService()));
         controllerMap.put(Request.of("GET", "/servlet/product"),
                 getGetProductByIdController(getProductService()));
-
     }
 
     @Override
